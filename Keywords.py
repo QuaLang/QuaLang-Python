@@ -6,7 +6,7 @@ KW_if = "if"
 
 KW_let = "define"
 KW_assign = "value"
-KW_import1 = "import"
+KW_import1 = "include"
 KW_import2 = "done"
 KW_def = "function"
 KW_return1 = "return"
