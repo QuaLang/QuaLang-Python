@@ -1,0 +1,4 @@
+main
+    define msg value "Hello World!"
+    log msg
+say goodbye   

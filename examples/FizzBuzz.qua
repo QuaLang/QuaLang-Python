@@ -1,0 +1,26 @@
+main
+    function fizzBuzz num
+        if num % 15 is 0
+            log "FizzBuzz\n"
+            return 0 data
+        end
+
+        if num % 3 is 0
+            log "Fizz\n"
+            return 0 data
+        end
+
+        if num % 5 is 0
+            log "Buzz\n"
+            return 0 data
+        end
+ 
+        log str(num) + "\n"
+    end
+    
+    define index value 0
+    while index is less than 30
+        define index value index + 1
+        fizzBuzz(index)
+    end
+end

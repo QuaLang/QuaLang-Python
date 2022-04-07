@@ -1,0 +1,13 @@
+main
+    # Same as `import sys` in python
+    include sys done
+
+    # Ask for input
+    log "What is your name?\n"
+
+    define name value sys.stdin.readline()
+
+    # Prints hello {name}
+    log "hello " + name + "\n"
+
+end

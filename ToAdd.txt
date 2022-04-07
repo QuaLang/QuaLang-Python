@@ -1,0 +1,12 @@
+Allies, Like value has set, import has include and requrie, functions has many types like the current function [name] [params] and a coming one function name ([params]) [{}], log will have print and output
+
+Main will be optional
+Classes 
+Rewrite all code 
+Instead of having to redefine a value you can just do "assign" or "set", so "define [name] value [data]" would be "set [name] [data]" and "assign [name] [data]"
+Better import system
+Package system
+Binary and a compiler/interpreter
+add "include [package] then import" and such
+
+Start adding C++ support 

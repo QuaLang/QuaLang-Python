@@ -1,0 +1,6 @@
+main
+    include requests done
+    define link value "https://fusionsidapi.herokuapp.com/api/fact/"
+    define response value requests.get(link).json() 
+    log response["fact"] + "\n"
+end

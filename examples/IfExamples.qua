@@ -1,0 +1,13 @@
+main
+
+    define age value 20
+
+    if age is greater than 18
+       log  "Adult\n"
+    end
+
+    if age is less than 6
+        log "Kid\n"
+    end
+
+end

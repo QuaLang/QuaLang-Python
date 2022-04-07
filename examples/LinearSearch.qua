@@ -1,0 +1,22 @@
+main
+    function LinearSearch arr, target
+
+        define index value 0
+
+        while index is less than length(arr)
+            if arr[index] is target
+                log "Found in index " + to_string(index) + "\n"
+                return index data
+            end
+            define index value index + 1
+        end
+
+        log to_string(target) + " is not found! :( \n"
+
+    end
+
+    define arr value [6, 7, 5, 9, 12]
+    LinearSearch(arr, 12)
+    LinearSearch(arr, 7)
+    LinearSearch(arr, 0)
+end

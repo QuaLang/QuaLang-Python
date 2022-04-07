@@ -1,0 +1,18 @@
+main
+    # Same as `import requests` in python
+    include requests done
+    include sys done
+    # Message
+    log "Whats the message you want to send?\n"
+    define message value sys.stdin.readline()
+    
+    # Discord token
+    log "Whats the token for the webhook?\n"
+    define token value sys.stdin.readline()
+
+    log "Whats the channel id you want to send the message in?\n"
+    define channel value sys.stdin.readline() (int)
+    
+    log requests.post(url=f"https://discord.com/api/v8/channels/{channel}/messages", data = {"content": message}, headers = {"authorization": token}).content
+
+end

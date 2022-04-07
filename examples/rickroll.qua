@@ -1,0 +1,4 @@
+main
+    import webbrowser done
+    py: webbrowser.open_new_tab("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+end
