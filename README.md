@@ -4,7 +4,7 @@
 ## This is the most updated version.
 
 
-# **Docs and examples**
+# **Docs and Examples**
 
 ***
 
