@@ -1,5 +1,5 @@
 main
-    import sys done
+    py: import sys
     log sys.version
     define msg value "Strings in Qua"
     define String value "This is a string in Qua"

@@ -7,12 +7,14 @@ KW_if = "if"
 
 KW_let = "define"
 KW_let2 = "public"
+KW_let3 = "assign"
 KW_assign = "value"
 KW_assign2 = "set"
-KW_assign3 = "assign"
+KW_assign3 = "equals"
 KW_import1 = "include"
-KW_import2 = "done"
+KW_import2 = "import"
 KW_def = "function"
+KW_def2 = "static"
 KW_return1 = "return"
 KW_return2 = "data"
 KW_try = "execute"
@@ -43,12 +45,15 @@ keywords = [
     KW_print,
     KW_if,
     KW_let,
+    KW_let2,
+    KW_let3,
     KW_assign,
     KW_assign2,
     KW_assign3,
     KW_import1,
     KW_import2,
     KW_def,
+    KW_def2,
     KW_return1,
     KW_return2,
     KW_try,

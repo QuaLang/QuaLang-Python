@@ -130,33 +130,97 @@ class TranslateToPython:
             self.write(f'print({EXPR}, end="")')
 
         elif kw == KW_let:
-            """
-            let ID up EXPR
-            """
-
-            ID = join_list(
+            #print(self.values)
+            ID = 0
+            EXPR = 0
+            if self.values[2] == "value":
+              ID = join_list(
                 self.values[
-                    self.values.index(KW_let) + 1 : self.values.index(KW_assign)
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign)
                 ]
-            )
-            EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+
+            
+            elif self.values[2] == "set": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign2)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign2) + 1 :])
+            elif self.values[2] == "assign": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign3)
+                  ]
+                )
+              EXPR = join_list(self.values[self.values.index(KW_assign3) + 1 :])
+            #print(ID)
+            #print(EXPR)
+            #print(self.values)
             self.write(f"{ID} = {EXPR}")
-
-        elif kw == KW_let2:
-            if self.values.index(KW_assign):
-                print("bob")
-            if self.values.index(KW_assign2):
-                print("bob2")
-            """
-            let ID up EXPR
-            """
-
-            ID = join_list(
+        elif kw == KW_let3:
+            #print(self.values)
+            ID = 0
+            EXPR = 0
+            if self.values[2] == "value":
+              ID = join_list(
                 self.values[
-                    self.values.index(KW_let) + 1 : self.values.index(KW_assign)
+                  self.values.index(KW_let3) + 1 : self.values.index(KW_assign)
                 ]
-            )
-            EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+
+            
+            elif self.values[2] == "set": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let3) + 1 : self.values.index(KW_assign2)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign2) + 1 :])
+            elif self.values[2] == "assign": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let3) + 1 : self.values.index(KW_assign3)
+                  ]
+                )
+              EXPR = join_list(self.values[self.values.index(KW_assign3) + 1 :])
+            print(ID)
+            print(EXPR)
+            print(self.values)
+            self.write(f"{ID} = {EXPR}")
+          
+        elif kw == KW_let2:
+            #print(self.values[2])
+            ID = 0
+            EXPR = 0
+            if self.values[2] == "value":
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let2) + 1 : self.values.index(KW_assign)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+
+            
+            elif self.values[2] == "set": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let2) + 1 : self.values.index(KW_assign2)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign2) + 1 :])
+            elif self.values[2] == "assign": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let2) + 1 : self.values.index(KW_assign3)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign3) + 1 :])
+            print(ID)
+            print(EXPR)
             self.write(f"{ID} = {EXPR}")
 
         elif kw == KW_if:
@@ -214,13 +278,33 @@ class TranslateToPython:
             def ID ARGS
             """
             ID = self.values[1]
-            ARGS = join_list(self.values[2:])
+            if self.values[2] == "(":
+              ARGS = join_list(self.values[3:-1])
+              ID = self.values[1]
+              self.write(f"def {ID} ({ARGS}):")
 
-            self.write(f"def {ID}({ARGS}):")
-
+            else:
+              ARGS = join_list(self.values[2:])
+              ID = self.values[1]
+              self.write(f"def {ID} ({ARGS}):")
             self.is_function = True
             self.indent_count += 1
 
+        elif kw == KW_def2:
+            """
+            def ID ARGS
+            """
+            ID = self.values[1]
+            if self.values[2] == "(":
+              ARGS = join_list(self.values[3:-1])
+              ID = self.values[1]
+              self.write(f"def {ID} ({ARGS}):")
+
+            else:
+              ARGS = join_list(self.values[2:])
+              ID = self.values[1]
+              self.write(f"def {ID} ({ARGS}):")
+              
         elif kw == KW_return1:
             """
             return1 EXPR return2

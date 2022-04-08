@@ -10,3 +10,41 @@ Binary and a compiler/interpreter
 add "include [package] then import" and such
 
 Start adding C++ support 
+
+
+Done: 
+  Allias for value: assign, set
+  about 10% done doing the rewrite
+  
+
+
+
+        """ elif kw == KW_let3:
+            print(self.values)
+            ID = 0
+            EXPR = 0
+            if self.values[2] == "value":
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign) + 1 :])
+
+            
+            elif self.values[2] == "set": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign2)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign2) + 1 :])
+            elif self.values[2] == "assign": 
+              ID = join_list(
+                self.values[
+                  self.values.index(KW_let) + 1 : self.values.index(KW_assign3)
+                ]
+              )
+              EXPR = join_list(self.values[self.values.index(KW_assign3) + 1 :])
+            self.write(f"{ID} = {EXPR}")
+        """

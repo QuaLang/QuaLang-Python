@@ -1,5 +1,5 @@
 main
-    function LinearSearch arr, target
+    function LinearSearch (arr, target)
 
         define index value 0
 

@@ -1,23 +1,22 @@
-
 main
-    function is_prime num
-        define index value 2
-        while index is less than num
-            if num % index is 0
-                return 0 data
-            end
-            define index value index + 1
+  function is_prime num
+      define index value 2
+      while index is less than num
+        if num % index is 0
+            return 0 data
         end
+        define index value index + 1
+      end
 
-        return index data
-    end
+    return index data
+  end
 
-    define num value 2
-    while num is less than or equal to 40
-        if is_prime(num)
-            log num
-            log "\n"
-        end
-        define num value num + 1
+  define num value 2
+  while num is less than or equal to 40
+    if is_prime(num)
+      log num
+      log "\n"
     end
+    define num value num + 1
+  end
 end
